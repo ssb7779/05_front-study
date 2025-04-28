@@ -209,9 +209,28 @@
         사용자가 입력한 두 숫자값을 가져와 연산기호에 맞는 산술연산을 진행하고
         해당 결과를 #result7에 출력하시오.
       */
+      const num1 = Number(document.getElementById('num1').value);
+      const num2 = Number(document.getElementById('num2').value); 
+      let result;
+      switch(operator){
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2; 
+          break;
+        case 'x': 
+          result = num1 * num2; 
+          break;
+        case '/':
+          result = num2 !== 0 ? num1 / num2 : '0으로 나눌 수 없습니다.';
+          break;
+        case '%': 
+          result = num2 !== 0 ? num1 % num2 : '0으로 나눌 수 없습니다.'
+          break;
+      };
       
-
-
+      document.getElementById('result7').innerHTML = result;
     }
   </script>
 
@@ -235,7 +254,7 @@
     function inputStr() {
       // 텍스트 상자에 쓰여진 값을 전역 배열에 추가시키고 
       // 사용자가 입력한 값은 초기화 하기 (즉, 텍스트 상자를 빈 문자열로 초기화)
-
+      
     }
 
     // 출력 버튼 클릭시 실행되는 함수

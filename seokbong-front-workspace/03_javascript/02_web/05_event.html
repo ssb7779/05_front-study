@@ -474,6 +474,7 @@
         checkPwdInput.focus();
         evt.preventDefault();
       }
+
     });
 
   </script>
@@ -494,9 +495,32 @@
        2) keyCode : 물리적인 키 코드 
   -->
 
-  <input id="content" type="text" placeholder="아무 키나 입력하세요">
+ <input id="content" type="text" placeholder="아무 키나 입력하세요" >
 
   <div id="result" style="background:lightgray; width: 300px;">&nbsp;</div>
+
+  <script>
+    /*
+    document.getElementById('content').onkeypress = function(evt) {
+
+    };
+    */
+
+    document.getElementById('content').addEventListener('keyup', (evt) => {
+      // console.log('keyup 이벤트 발생');
+
+      // console.log(evt);
+      // console.log(`key: ${evt.key}`);
+      // console.log(`keyCode: ${evt.keyCode}`);
+      // console.log(`code: ${evt.code}`);
+
+      // console.log(`작성된값: ${evt.target.value}`);
+
+      document.getElementById('result').textContent = evt.target.value;
+
+    });
+
+  </script>
 
 
 </body>
